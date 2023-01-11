@@ -127,11 +127,11 @@ gulp.task('server', function () {
         ui: false
     })
 
-    gulp.watch(paths.styles + '/**/**/**/*.scss', gulp.series('styles'));
+    gulp.watch(paths.styles + '/**/**/**/*.scss', gulp.series('styles', 'render-view'));
     gulp.watch(paths.views + '/**/**/*.html', gulp.series('render-view'));
     gulp.watch(paths.src + '/img/**/*', gulp.series('copy'));
 
-    gulp.watch(paths.js + '/**/*', gulp.series('copy-js'));
+    gulp.watch(paths.js + '/**/*', gulp.series('copy-js', 'render-view'));
 
     gulp.watch(paths.src + '/img/svg/*', gulp.series('svg-store', 'copy'));
 });

@@ -133,7 +133,7 @@ sliderBtns.forEach((sliderBtn) => {
 
         sliderWrapper.style.transform = 'translate(-' + offset + 'px, 0)';
     });
-})
+});
 
 // Скрипт для фильтров Toys for kids
 
@@ -253,3 +253,32 @@ function setSearchParams(data) {
         });
     }
 })();
+
+// Скрипт для загрузки постов
+
+const BASE_URL = 'https://academy.directlinedev.com/api/posts';
+
+const xhr = new XMLHttpRequest();
+
+console.log(xhr);
+
+
+const productCards = document.querySelector('.product-cards__list');
+
+console.log(productCards);
+
+function cE(el, className) {
+    let element = document.createElement(el);
+    element.classList.add(className);
+}
+
+xhr.open('GET', BASE_URL);
+xhr.send();
+xhr.onload = () => {
+    console.log('The data has arrived successfully');
+}
+xhr.onerror = () => {
+    console.error('The data has arrived with error');
+}
+
+//console.log(JSON.parse(xhr.response));
