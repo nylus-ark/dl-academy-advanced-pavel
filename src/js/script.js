@@ -133,7 +133,7 @@ sliderBtns.forEach((sliderBtn) => {
 
         sliderWrapper.style.transform = 'translate(-' + offset + 'px, 0)';
     });
-})
+});
 
 // Скрипт для фильтров Toys for kids
 
